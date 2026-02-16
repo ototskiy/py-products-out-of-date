@@ -16,7 +16,7 @@ def products() -> list:
         {
             "name": "chicken",
             "expiration_date": datetime.date(2022, 2, 5),
-            "  price": 120
+            "price": 120
         },
         {
             "name": "duck",
@@ -32,10 +32,10 @@ def products() -> list:
         (datetime.date(2022, 2, 2), ["duck"])
     ]
 )
-@mock.patch("app.main.datetime.date")
+@mock.patch("datetime.date")
 def test_product_with_expiration_date(
-        mocked_datetime: str,
-        datetime_return_value: str,
+        mocked_datetime: datetime.date,
+        datetime_return_value: datetime.date,
         products: list,
         result: list
 ) -> None:
